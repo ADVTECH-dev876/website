@@ -1,0 +1,401 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benxzoms - Tech & Logistics Innovation</title>
+    <meta name="description" content="Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, and logistics. Innovation meets efficiency.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root{--primary:#e0f2fe;--primary-dark:#bae6fd;--secondary:#0ea5e9;--text:#0f172a;--light-text:#64748b;--bg:#ffffff;--radius:0.75rem;--shadow:0 4px 6px -1px rgba(14,165,233,0.1);--transition:all 0.3s ease}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:"Inter",sans-serif;color:var(--text);line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        .header{position:fixed;top:0;width:100%;background:var(--primary);color:var(--text);z-index:1000;box-shadow:var(--shadow)}
+        .header-content{display:flex;justify-content:space-between;align-items:center;padding:1rem}
+        .logo{font-size:1.75rem;font-weight:800;text-decoration:none;color:var(--text)}
+        .nav-list{display:flex;list-style:none;gap:2rem}
+        .nav-link{color:var(--text);text-decoration:none;font-weight:600;position:relative}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--secondary);transition:var(--transition)}
+        .nav-link:hover::after{width:100%}
+        .mobile-menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        .main{margin-top:80px}
+        .hero{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--text);padding:6rem 0;text-align:center;position:relative}
+        .hero h1{font-size:3.5rem;font-weight:800;margin-bottom:1.5rem}
+        .hero p{font-size:1.25rem;margin-bottom:2rem;max-width:600px;margin:0 auto 2rem}
+        .btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--secondary);color:white;padding:1rem 2rem;border:none;border-radius:var(--radius);text-decoration:none;font-weight:600;transition:var(--transition);cursor:pointer}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 20px 25px -5px rgba(14,165,233,0.3)}
+        .section{padding:5rem 0}
+        .section-alt{background:var(--bg)}
+        .section-title{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:1rem;color:var(--secondary)}
+        .section-subtitle{text-align:center;font-size:1.1rem;color:var(--light-text);max-width:600px;margin:0 auto 3rem}
+        .grid{display:grid;gap:2rem;margin-top:3rem}
+        .card{background:var(--bg);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);transition:var(--transition);border:1px solid var(--primary-dark)}
+        .card:hover{transform:translateY(-5px);box-shadow:0 20px 25px -5px rgba(14,165,233,0.2)}
+        .icon{width:3rem;height:3rem;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:white}
+        .card-title{font-size:1.25rem;font-weight:600;margin-bottom:0.5rem;color:var(--secondary)}
+        .features{list-style:none}
+        .features li{display:flex;align-items:center;margin-bottom:0.5rem;font-size:0.9rem}
+        .features li::before{content:'✓';color:#0ea5e9;font-weight:bold;margin-right:0.5rem}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+        .form-group{margin-bottom:1.5rem}
+        .form-label{display:block;margin-bottom:0.5rem;font-weight:600;color:var(--secondary)}
+        .form-input,.form-textarea{width:100%;padding:0.75rem;border:2px solid #e2e8f0;border-radius:var(--radius);font-family:inherit;font-size:1rem;transition:var(--transition)}
+        .form-input:focus,.form-textarea:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 3px rgba(14,165,233,0.1)}
+        .form-textarea{resize:vertical;min-height:120px}
+        .footer{background:var(--primary);color:var(--text);padding:3rem 0 1rem}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem}
+        .footer h3{margin-bottom:1rem;font-weight:600;color:var(--secondary)}
+        .footer p,.footer a{color:var(--text);text-decoration:none}
+        .footer a:hover{color:var(--secondary)}
+        .social{display:flex;gap:1rem;margin-top:1rem}
+        .social a{width:2.5rem;height:2.5rem;background:var(--primary-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text);text-decoration:none}
+        .social a:hover{background:var(--secondary);color:white;transform:translateY(-2px)}
+        .footer-bottom{border-top:1px solid var(--primary-dark);padding-top:1rem;text-align:center;color:var(--light-text)}
+        
+        /* Chatbot Styles */
+        .chatbot-container{position:fixed;bottom:20px;right:20px;z-index:1001}
+        .chatbot-toggle{width:60px;height:60px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer;box-shadow:0 4px 12px rgba(14,165,233,0.3);transition:var(--transition)}
+        .chatbot-toggle:hover{transform:scale(1.1)}
+        .chatbot-window{width:350px;height:450px;background:white;border-radius:var(--radius);box-shadow:0 10px 25px rgba(0,0,0,0.15);display:none;flex-direction:column;overflow:hidden}
+        .chatbot-header{background:var(--secondary);color:white;padding:1rem;display:flex;justify-content:space-between;align-items:center}
+        .chatbot-messages{flex:1;padding:1rem;overflow-y:auto;background:#f8fafc}
+        .message{margin-bottom:1rem;padding:0.75rem;border-radius:var(--radius);max-width:80%}
+        .bot-message{background:var(--primary);align-self:flex-start}
+        .user-message{background:#e2e8f0;margin-left:auto;align-self:flex-end}
+        .chatbot-input{display:flex;padding:1rem;background:white;border-top:1px solid #e2e8f0}
+        .chatbot-input input{flex:1;padding:0.75rem;border:1px solid #e2e8f0;border-radius:var(--radius) 0 0 var(--radius);outline:none}
+        .chatbot-input button{background:var(--secondary);color:white;border:none;padding:0 1.5rem;border-radius:0 var(--radius) var(--radius) 0;cursor:pointer}
+        
+        @media(max-width:768px){.nav-list{display:none}.mobile-menu-btn{display:block}.hero h1{font-size:2.5rem}.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.chatbot-window{width:300px;height:400px}}
+        @media(max-width:480px){.hero h1{font-size:2rem}.section-title{font-size:2rem}.chatbot-container{bottom:10px;right:10px}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">Benxzoms</a>
+                <nav>
+                    <ul class="nav-list" id="navList">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Technology & Logistics Innovation</h1>
+                <p>Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, and logistics. Where technology meets efficiency.</p>
+                <a href="#contact" class="btn">Get Started <i data-lucide="arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Integrated technology and logistics solutions designed to accelerate your business growth.</p>
+                
+                <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+                    <div class="card">
+                        <div class="icon"><i data-lucide="code"></i></div>
+                        <h3 class="card-title">Web & App Development</h3>
+                        <p>Modern, scalable applications built with cutting-edge technologies.</p>
+                        <ul class="features">
+                            <li>Responsive Web Design</li>
+                            <li>Mobile App Development</li>
+                            <li>API Integration</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon"><i data-lucide="cpu"></i></div>
+                        <h3 class="card-title">AI & Machine Learning</h3>
+                        <p>Intelligent solutions that transform data into actionable insights.</p>
+                        <ul class="features">
+                            <li>Predictive Analytics</li>
+                            <li>Computer Vision</li>
+                            <li>Natural Language Processing</li>
+                            <li>AI-Powered Automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon"><i data-lucide="cloud"></i></div>
+                        <h3 class="card-title">Cloud Solutions</h3>
+                        <p>Scalable, secure cloud infrastructure and migration services.</p>
+                        <ul class="features">
+                            <li>Cloud Migration</li>
+                            <li>Serverless Architecture</li>
+                            <li>DevOps Implementation</li>
+                            <li>Cloud Security</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon"><i data-lucide="globe"></i></div>
+                        <h3 class="card-title">IoT Integration</h3>
+                        <p>Connected devices and smart systems for real-time monitoring.</p>
+                        <ul class="features">
+                            <li>IoT Platform Development</li>
+                            <li>Sensor Integration</li>
+                            <li>Real-time Data Processing</li>
+                            <li>Edge Computing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon"><i data-lucide="truck"></i></div>
+                        <h3 class="card-title">Smart Logistics</h3>
+                        <p>AI-powered logistics and supply chain optimization solutions.</p>
+                        <ul class="features">
+                            <li>Route Optimization</li>
+                            <li>Inventory Management</li>
+                            <li>Real-time Tracking</li>
+                            <li>Supply Chain Analytics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon"><i data-lucide="shield"></i></div>
+                        <h3 class="card-title">Cybersecurity</h3>
+                        <p>Comprehensive security solutions for your digital infrastructure.</p>
+                        <ul class="features">
+                            <li>Security Audits</li>
+                            <li>Threat Detection</li>
+                            <li>Data Protection</li>
+                            <li>Compliance Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to transform your business with innovative technology and logistics solutions?</p>
+                
+                <div class="contact-grid">
+                    <form id="contactForm" class="card">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message <i data-lucide="send"></i></button>
+                    </form>
+                    
+                    <div style="display:flex;flex-direction:column;gap:2rem">
+                        <div class="card">
+                            <div style="display:flex;align-items:center;gap:1rem">
+                                <div class="icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <h3>Phone</h3>
+                                    <p>+91 84899 20988</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display:flex;align-items:center;gap:1rem">
+                                <div class="icon"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>aadthiyaa@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display:flex;align-items:center;gap:1rem">
+                                <div class="icon"><i data-lucide="user"></i></div>
+                                <div>
+                                    <h3>Admin Profile</h3>
+                                    <p><a href="https://aadhavanmassdp.github.io/porfolio/" target="_blank" style="color:var(--secondary);text-decoration:underline;">View Portfolio</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Benxzoms</h3>
+                    <p>Innovating at the intersection of technology and logistics. Building the future, one solution at a time.</p>
+                    <div class="social">
+                        <a href="https://github.com/ADVTECH-dev876" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://www.linkedin.com/in/aadhavan-r-3a2b00257" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="https://substack.com/@aadhavtech" target="_blank" aria-label="Substack"><i data-lucide="mail"></i></a>
+                         <a href="https://www.youtube.com/@tech_sys-t5f" target="_blank" aria-label="youtube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <p><a href="#services">Web Development</a></p>
+                    <p><a href="#services">AI Solutions</a></p>
+                    <p><a href="#services">Cloud Services</a></p>
+                    <p><a href="#services">IoT Integration</a></p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p><a href="#home">About Us</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                    <p><a href="#">Careers</a></p>
+                    <p><a href="#">Blog</a></p>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Terms of Service</a></p>
+                    <p><a href="#">Cookie Policy</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Benxzoms. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i data-lucide="message-circle"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <span>Benxzoms Assistant</span>
+                <span id="chatbotClose" style="cursor:pointer;font-size:1.2rem">×</span>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">Hello! I'm your Benxzoms assistant. How can I help you today?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." maxlength="200">
+                <button id="chatbotSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Navigation
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('navList');
+        mobileMenuBtn.addEventListener('click', () => navList.classList.toggle('active'));
+        document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => navList.classList.remove('active')));
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(anchor.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'});
+        }));
+        
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            if(formData.get('name') && formData.get('email') && formData.get('message')){
+                alert('Thank you for your message! We\'ll get back to you shortly.');
+                e.target.reset();
+            }
+        });
+        
+        // Chatbot
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.style.display = 'none';
+        });
+        
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        function getBotResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                return "Hello! How can I assist you with our services today?";
+            } else if (lowerMessage.includes('web') || lowerMessage.includes('app') || lowerMessage.includes('development')) {
+                return "We specialize in modern web and mobile app development using cutting-edge technologies. Would you like to know more about our development services?";
+            } else if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) {
+                return "Our AI solutions include predictive analytics, computer vision, and NLP. We help businesses leverage AI for better decision-making and automation.";
+            } else if (lowerMessage.includes('cloud')) {
+                return "We offer comprehensive cloud solutions including migration, serverless architecture, and DevOps implementation across major cloud platforms.";
+            } else if (lowerMessage.includes('iot') || lowerMessage.includes('internet of things')) {
+                return "Our IoT integration services connect devices and systems for real-time monitoring and data processing, enabling smarter operations.";
+            } else if (lowerMessage.includes('logistics') || lowerMessage.includes('supply chain')) {
+                return "We provide AI-powered logistics solutions including route optimization, inventory management, and real-time tracking to streamline your supply chain.";
+            } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('quote')) {
+                return "Pricing varies based on project requirements. Please contact us at aadthiyaa@gmail.com for a personalized quote!";
+            } else if (lowerMessage.includes('thank')) {
+                return "You're welcome! Is there anything else I can help you with?";
+            } else if (lowerMessage.includes('github')) {
+                return "You can find our code on GitHub: https://github.com/ADVTECH-dev876";
+            } else if (lowerMessage.includes('linkedin')) {
+                return "Connect with us on LinkedIn: https://www.linkedin.com/in/aadhavan";
+            } else if (lowerMessage.includes('substack')) {
+                return "Follow our tech insights on Substack: https://substack.com/@aadhavtech";
+            } else if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('profile')) {
+                return "You can reach us at aadthiyaa@gmail.com or call +91 84899 20988. You can also view our admin profile at https://aadhavanmassdp.github.io/porfolio/";
+            } else {
+                return "I'm here to help with questions about our web development, AI, cloud, IoT, and logistics services. What would you like to know?";
+            }
+        }
+        
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatbotInput.value = '';
+                
+                setTimeout(() => {
+                    const response = getBotResponse(message);
+                    addMessage(response);
+                }, 500);
+            }
+        }
+        
+        chatbotSend.addEventListener('click', sendMessage);
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
+```
