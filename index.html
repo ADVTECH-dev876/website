@@ -1,11 +1,10 @@
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skillers tect</title>- Tech & Logistics Innovation</title>
-    <meta name="description" content="Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, and logistics. Innovation meets efficiency.">
+    <title>skillers tect - Tech & Logistics Innovation</title>
+    <meta name="description" content="Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, logistics, and business consulting. Innovation meets efficiency.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -56,8 +55,6 @@
         .social a{width:2.5rem;height:2.5rem;background:var(--primary-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text);text-decoration:none}
         .social a:hover{background:var(--secondary);color:white;transform:translateY(-2px)}
         .footer-bottom{border-top:1px solid var(--primary-dark);padding-top:1rem;text-align:center;color:var(--light-text)}
-        
-        /* Chatbot Styles */
         .chatbot-container{position:fixed;bottom:20px;right:20px;z-index:1001}
         .chatbot-toggle{width:60px;height:60px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer;box-shadow:0 4px 12px rgba(14,165,233,0.3);transition:var(--transition)}
         .chatbot-toggle:hover{transform:scale(1.1)}
@@ -68,9 +65,8 @@
         .bot-message{background:var(--primary);align-self:flex-start}
         .user-message{background:#e2e8f0;margin-left:auto;align-self:flex-end}
         .chatbot-input{display:flex;padding:1rem;background:white;border-top:1px solid #e2e8f0}
-        .chatbot-input input{flex:1;padding:0.75rem;border:1px solid #e2e8f0;border-radius:var(--radius) 0 0 var(--radius);outline:none}
+        .chatbot-input input{flex:1;padding:0.75rem;border:1px solid #e2e8f0;border-radius:0 var(--radius) 0;outline:none}
         .chatbot-input button{background:var(--secondary);color:white;border:none;padding:0 1.5rem;border-radius:0 var(--radius) var(--radius) 0;cursor:pointer}
-        
         @media(max-width:768px){.nav-list{display:none}.mobile-menu-btn{display:block}.hero h1{font-size:2.5rem}.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.chatbot-window{width:300px;height:400px}}
         @media(max-width:480px){.hero h1{font-size:2rem}.section-title{font-size:2rem}.chatbot-container{bottom:10px;right:10px}}
     </style>
@@ -79,7 +75,7 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">>skillers tect</a>
+                <a href="#home" class="logo">skillers tect</a>
                 <nav>
                     <ul class="nav-list" id="navList">
                         <li><a href="#home" class="nav-link">Home</a></li>
@@ -93,21 +89,18 @@
             </div>
         </div>
     </header>
-
     <main class="main">
         <section id="home" class="hero">
             <div class="container">
                 <h1>Technology & Logistics Innovation</h1>
-                <p>Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, and logistics. Where technology meets efficiency.</p>
+                <p>skillers tech delivers cutting-edge solutions in web development, AI, cloud, IoT, logistics, and business consulting. Where technology meets efficiency.</p>
                 <a href="#contact" class="btn">Get Started <i data-lucide="arrow-right"></i></a>
             </div>
         </section>
-
         <section id="services" class="section">
             <div class="container">
                 <h2 class="section-title">Our Core Services</h2>
                 <p class="section-subtitle">Integrated technology and logistics solutions designed to accelerate your business growth.</p>
-                
                 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
                     <div class="card">
                         <div class="icon"><i data-lucide="code"></i></div>
@@ -118,9 +111,9 @@
                             <li>Mobile App Development</li>
                             <li>API Integration</li>
                             <li>Performance Optimization</li>
+                            <li>Business Consulting</li>
                         </ul>
                     </div>
-                    
                     <div class="card">
                         <div class="icon"><i data-lucide="cpu"></i></div>
                         <h3 class="card-title">AI & Machine Learning</h3>
@@ -132,7 +125,6 @@
                             <li>AI-Powered Automation</li>
                         </ul>
                     </div>
-                    
                     <div class="card">
                         <div class="icon"><i data-lucide="cloud"></i></div>
                         <h3 class="card-title">Cloud Solutions</h3>
@@ -144,7 +136,6 @@
                             <li>Cloud Security</li>
                         </ul>
                     </div>
-                    
                     <div class="card">
                         <div class="icon"><i data-lucide="globe"></i></div>
                         <h3 class="card-title">IoT Integration</h3>
@@ -156,7 +147,6 @@
                             <li>Edge Computing</li>
                         </ul>
                     </div>
-                    
                     <div class="card">
                         <div class="icon"><i data-lucide="truck"></i></div>
                         <h3 class="card-title">Smart Logistics</h3>
@@ -168,7 +158,6 @@
                             <li>Supply Chain Analytics</li>
                         </ul>
                     </div>
-                    
                     <div class="card">
                         <div class="icon"><i data-lucide="shield"></i></div>
                         <h3 class="card-title">Cybersecurity</h3>
@@ -180,15 +169,27 @@
                             <li>Compliance Management</li>
                         </ul>
                     </div>
+                    <!-- Business Consulting Card Starts Here -->
+                    <div class="card">
+                        <div class="icon"><i data-lucide="briefcase"></i></div>
+                        <h3 class="card-title">Business Consulting</h3>
+                        <p>Strategic guidance to optimize growth, efficiency, and competitive advantage through technology adoption.</p>
+                        <ul class="features">
+                            <li>Digital Transformation</li>
+                            <li>Process Automation</li>
+                            <li>Market Analysis</li>
+                            <li>Innovation Strategy</li>
+                            <li>Change Management</li>
+                        </ul>
+                    </div>
+                    <!-- Business Consulting Card Ends Here -->
                 </div>
             </div>
         </section>
-
         <section id="contact" class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Ready to transform your business with innovative technology and logistics solutions?</p>
-                
                 <div class="contact-grid">
                     <form id="contactForm" class="card">
                         <div class="form-group">
@@ -205,7 +206,6 @@
                         </div>
                         <button type="submit" class="btn">Send Message <i data-lucide="send"></i></button>
                     </form>
-                    
                     <div style="display:flex;flex-direction:column;gap:2rem">
                         <div class="card">
                             <div style="display:flex;align-items:center;gap:1rem">
@@ -239,18 +239,17 @@
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h3>>skillers tect</h3>
+                    <h3>skillerstech</h3>
                     <p>Innovating at the intersection of technology and logistics. Building the future, one solution at a time.</p>
                     <div class="social">
                         <a href="https://github.com/ADVTECH-dev876" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
                         <a href="https://www.linkedin.com/in/aadhavan-r-3a2b00257" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                         <a href="https://substack.com/@aadhavtech" target="_blank" aria-label="Substack"><i data-lucide="mail"></i></a>
-                         <a href="https://www.youtube.com/@tech_sys-t5f" target="_blank" aria-label="youtube"><i data-lucide="youtube"></i></a>
+                        <a href="https://www.youtube.com/@tech_sys-t5f" target="_blank" aria-label="youtube"><i data-lucide="youtube"></i></a>
                     </div>
                 </div>
                 <div>
@@ -259,6 +258,7 @@
                     <p><a href="#services">AI Solutions</a></p>
                     <p><a href="#services">Cloud Services</a></p>
                     <p><a href="#services">IoT Integration</a></p>
+                    <p><a href="#services">Business Consulting</a></p>
                 </div>
                 <div>
                     <h3>Company</h3>
@@ -275,11 +275,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Benxzoms. All rights reserved.</p>
+                <p>&copy; 2025 skillerstech. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
     <!-- Chatbot -->
     <div class="chatbot-container">
         <div class="chatbot-toggle" id="chatbotToggle">
@@ -287,11 +286,11 @@
         </div>
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
-                <span>Benxzoms Assistant</span>
+                <span>our chatbot</span>
                 <span id="chatbotClose" style="cursor:pointer;font-size:1.2rem">×</span>
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">Hello! I'm your Benxzoms assistant. How can I help you today?</div>
+                <div class="message bot-message">Hello! I'm your skillerstech assistant. How can I help you today?</div>
             </div>
             <div class="chatbot-input">
                 <input type="text" id="chatbotInput" placeholder="Type your message..." maxlength="200">
@@ -299,10 +298,8 @@
             </div>
         </div>
     </div>
-
     <script>
         lucide.createIcons();
-        
         // Navigation
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navList = document.getElementById('navList');
@@ -312,7 +309,6 @@
             e.preventDefault();
             document.querySelector(anchor.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'});
         }));
-        
         // Contact Form
         document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
@@ -322,7 +318,6 @@
                 e.target.reset();
             }
         });
-        
         // Chatbot
         const chatbotToggle = document.getElementById('chatbotToggle');
         const chatbotWindow = document.getElementById('chatbotWindow');
@@ -330,15 +325,12 @@
         const chatbotMessages = document.getElementById('chatbotMessages');
         const chatbotInput = document.getElementById('chatbotInput');
         const chatbotSend = document.getElementById('chatbotSend');
-        
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
         });
-        
         chatbotClose.addEventListener('click', () => {
             chatbotWindow.style.display = 'none';
         });
-        
         function addMessage(text, isUser = false) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
@@ -346,7 +338,6 @@
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
-        
         function getBotResponse(userMessage) {
             const lowerMessage = userMessage.toLowerCase();
             if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
@@ -361,8 +352,10 @@
                 return "Our IoT integration services connect devices and systems for real-time monitoring and data processing, enabling smarter operations.";
             } else if (lowerMessage.includes('logistics') || lowerMessage.includes('supply chain')) {
                 return "We provide AI-powered logistics solutions including route optimization, inventory management, and real-time tracking to streamline your supply chain.";
+            } else if (lowerMessage.includes('consulting') || lowerMessage.includes('business consulting')) {
+                return "Our business consulting helps organizations drive transformation with digital strategy, innovation, and change management. Let us know your goals!";
             } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('quote')) {
-                return "Pricing varies based on project requirements. Please contact us at aadthiyaa@gmail.com for a personalized quote!";
+                return "Pricing varies based on project requirements. Please contact us at [aadthiyaa@gmail.com](mailto:aadthiyaa@gmail.com) for a personalized quote!";
             } else if (lowerMessage.includes('thank')) {
                 return "You're welcome! Is there anything else I can help you with?";
             } else if (lowerMessage.includes('github')) {
@@ -374,23 +367,20 @@
             } else if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('profile')) {
                 return "You can reach us at aadthiyaa@gmail.com or call +91 84899 20988. You can also view our admin profile at https://aadhavanmassdp.github.io/porfolio/";
             } else {
-                return "I'm here to help with questions about our web development, AI, cloud, IoT, and logistics services. What would you like to know?";
+                return "I'm here to help with questions about our web development, AI, cloud, IoT, business consulting, and logistics services. What would you like to know?";
             }
         }
-        
         function sendMessage() {
             const message = chatbotInput.value.trim();
             if (message) {
                 addMessage(message, true);
                 chatbotInput.value = '';
-                
                 setTimeout(() => {
                     const response = getBotResponse(message);
                     addMessage(response);
                 }, 500);
             }
         }
-        
         chatbotSend.addEventListener('click', sendMessage);
         chatbotInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
