@@ -1,85 +1,562 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skillers tect - Tech & Logistics Innovation</title>
-    <meta name="description" content="Benxzoms delivers cutting-edge solutions in web development, AI, cloud, IoT, logistics, and business consulting. Innovation meets efficiency.">
+    <title>skillerstech · build · scale · innovate</title>
+    <!-- full multi‑page startup experience – palette: e63946, f1faee, a8dadc, 457b9d, 1d3557 -->
+    <meta name="description" content="skillerstech is a full‑stack technology startup. We combine AI, cloud, logistics, and compelling copy to turn ambitious ideas into market‑leading products.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root{--primary:#e0f2fe;--primary-dark:#bae6fd;--secondary:#0ea5e9;--text:#0f172a;--light-text:#64748b;--bg:#ffffff;--radius:0.75rem;--shadow:0 4px 6px -1px rgba(14,165,233,0.1);--transition:all 0.3s ease}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:"Inter",sans-serif;color:var(--text);line-height:1.6}
-        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-        .header{position:fixed;top:0;width:100%;background:var(--primary);color:var(--text);z-index:1000;box-shadow:var(--shadow)}
-        .header-content{display:flex;justify-content:space-between;align-items:center;padding:1rem}
-        .logo{font-size:1.75rem;font-weight:800;text-decoration:none;color:var(--text)}
-        .nav-list{display:flex;list-style:none;gap:2rem}
-        .nav-link{color:var(--text);text-decoration:none;font-weight:600;position:relative}
-        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--secondary);transition:var(--transition)}
-        .nav-link:hover::after{width:100%}
-        .mobile-menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
-        .main{margin-top:80px}
-        .hero{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--text);padding:6rem 0;text-align:center;position:relative}
-        .hero h1{font-size:3.5rem;font-weight:800;margin-bottom:1.5rem}
-        .hero p{font-size:1.25rem;margin-bottom:2rem;max-width:600px;margin:0 auto 2rem}
-        .btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--secondary);color:white;padding:1rem 2rem;border:none;border-radius:var(--radius);text-decoration:none;font-weight:600;transition:var(--transition);cursor:pointer}
-        .btn:hover{transform:translateY(-2px);box-shadow:0 20px 25px -5px rgba(14,165,233,0.3)}
-        .section{padding:5rem 0}
-        .section-alt{background:var(--bg)}
-        .section-title{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:1rem;color:var(--secondary)}
-        .section-subtitle{text-align:center;font-size:1.1rem;color:var(--light-text);max-width:600px;margin:0 auto 3rem}
-        .grid{display:grid;gap:2rem;margin-top:3rem}
-        .card{background:var(--bg);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);transition:var(--transition);border:1px solid var(--primary-dark)}
-        .card:hover{transform:translateY(-5px);box-shadow:0 20px 25px -5px rgba(14,165,233,0.2)}
-        .icon{width:3rem;height:3rem;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:white}
-        .card-title{font-size:1.25rem;font-weight:600;margin-bottom:0.5rem;color:var(--secondary)}
-        .features{list-style:none}
-        .features li{display:flex;align-items:center;margin-bottom:0.5rem;font-size:0.9rem}
-        .features li::before{content:'✓';color:#0ea5e9;font-weight:bold;margin-right:0.5rem}
-        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
-        .form-group{margin-bottom:1.5rem}
-        .form-label{display:block;margin-bottom:0.5rem;font-weight:600;color:var(--secondary)}
-        .form-input,.form-textarea{width:100%;padding:0.75rem;border:2px solid #e2e8f0;border-radius:var(--radius);font-family:inherit;font-size:1rem;transition:var(--transition)}
-        .form-input:focus,.form-textarea:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 3px rgba(14,165,233,0.1)}
-        .form-textarea{resize:vertical;min-height:120px}
-        .footer{background:var(--primary);color:var(--text);padding:3rem 0 1rem}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem}
-        .footer h3{margin-bottom:1rem;font-weight:600;color:var(--secondary)}
-        .footer p,.footer a{color:var(--text);text-decoration:none}
-        .footer a:hover{color:var(--secondary)}
-        .social{display:flex;gap:1rem;margin-top:1rem}
-        .social a{width:2.5rem;height:2.5rem;background:var(--primary-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text);text-decoration:none}
-        .social a:hover{background:var(--secondary);color:white;transform:translateY(-2px)}
-        .footer-bottom{border-top:1px solid var(--primary-dark);padding-top:1rem;text-align:center;color:var(--light-text)}
-        .chatbot-container{position:fixed;bottom:20px;right:20px;z-index:1001}
-        .chatbot-toggle{width:60px;height:60px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer;box-shadow:0 4px 12px rgba(14,165,233,0.3);transition:var(--transition)}
-        .chatbot-toggle:hover{transform:scale(1.1)}
-        .chatbot-window{width:350px;height:450px;background:white;border-radius:var(--radius);box-shadow:0 10px 25px rgba(0,0,0,0.15);display:none;flex-direction:column;overflow:hidden}
-        .chatbot-header{background:var(--secondary);color:white;padding:1rem;display:flex;justify-content:space-between;align-items:center}
-        .chatbot-messages{flex:1;padding:1rem;overflow-y:auto;background:#f8fafc}
-        .message{margin-bottom:1rem;padding:0.75rem;border-radius:var(--radius);max-width:80%}
-        .bot-message{background:var(--primary);align-self:flex-start}
-        .user-message{background:#e2e8f0;margin-left:auto;align-self:flex-end}
-        .chatbot-input{display:flex;padding:1rem;background:white;border-top:1px solid #e2e8f0}
-        .chatbot-input input{flex:1;padding:0.75rem;border:1px solid #e2e8f0;border-radius:0 var(--radius) 0;outline:none}
-        .chatbot-input button{background:var(--secondary);color:white;border:none;padding:0 1.5rem;border-radius:0 var(--radius) var(--radius) 0;cursor:pointer}
-        @media(max-width:768px){.nav-list{display:none}.mobile-menu-btn{display:block}.hero h1{font-size:2.5rem}.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.chatbot-window{width:300px;height:400px}}
-        @media(max-width:480px){.hero h1{font-size:2rem}.section-title{font-size:2rem}.chatbot-container{bottom:10px;right:10px}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #e63946;
+            --light: #f1faee;
+            --mint: #a8dadc;
+            --ocean: #457b9d;
+            --deep: #1d3557;
+            --white: #ffffff;
+            --radius-lg: 2rem;
+            --radius-md: 1.5rem;
+            --radius-sm: 1rem;
+            --shadow: 0 25px 40px -12px rgba(29, 53, 87, 0.25);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--deep);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ---- background textures (layered depth) ---- */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(69, 123, 157, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(168, 218, 220, 0.1) 0%, transparent 35%),
+                repeating-linear-gradient(45deg, rgba(230, 57, 70, 0.02) 0px, rgba(230, 57, 70, 0.02) 2px, transparent 2px, transparent 12px);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .bg-abstract {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+            opacity: 0.02;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---- header (bold & clean) ---- */
+        .header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(241, 250, 238, 0.92);
+            backdrop-filter: blur(16px);
+            z-index: 100;
+            border-bottom: 3px solid var(--red);
+            box-shadow: 0 8px 20px -10px rgba(29, 53, 87, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(145deg, var(--red), var(--ocean));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--deep);
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--red);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--red);
+        }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active {
+            color: var(--red);
+            font-weight: 700;
+        }
+        .nav-link.active::after { width: 100%; background: var(--red); }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--deep);
+            cursor: pointer;
+        }
+
+        /* ---- page sections (each feels like a standalone page) ---- */
+        .page-section {
+            padding: 5rem 0;
+            position: relative;
+            scroll-margin-top: 5rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .page-header h2 {
+            font-size: 3.5rem;
+            color: var(--deep);
+            line-height: 1.2;
+        }
+        .page-header h2 span {
+            color: var(--red);
+            background: linear-gradient(145deg, var(--red), var(--ocean));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            color: var(--deep);
+            opacity: 0.8;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            display: inline-block;
+            border-bottom: 5px solid var(--red);
+            padding-bottom: 0.5rem;
+        }
+
+        /* ---- card systems ---- */
+        .grid-2, .grid-3, .grid-4 {
+            display: grid;
+            gap: 2rem;
+        }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--mint);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--red), var(--ocean));
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--red);
+            box-shadow: 0 35px 45px -15px rgba(230, 57, 70, 0.25);
+        }
+        .card-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(145deg, var(--mint), var(--ocean));
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+        }
+        .card p {
+            color: var(--deep);
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+        }
+        .feature-tag {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--deep);
+            border-radius: 40px;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--ocean);
+        }
+
+        /* ---- about page block (story + stats) ---- */
+        .story-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            border: 2px solid var(--mint);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            border: 1px solid var(--mint);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--red);
+            font-family: 'Space Grotesk';
+        }
+
+        /* ---- process timeline ---- */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .step {
+            flex: 1 1 200px;
+            background: var(--light);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            border: 2px dashed var(--mint);
+            text-align: center;
+            position: relative;
+        }
+        .step-num {
+            background: var(--red);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            border: 3px solid var(--mint);
+        }
+
+        /* ---- team cards ---- */
+        .team-card {
+            text-align: center;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 2rem 1rem;
+            border: 1px solid var(--mint);
+        }
+        .team-avatar {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            background: var(--mint);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--red);
+            color: var(--deep);
+        }
+
+        /* ---- blog cards ---- */
+        .blog-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--mint);
+        }
+        .blog-img {
+            height: 200px;
+            background: linear-gradient(145deg, var(--mint), var(--ocean));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .blog-content {
+            padding: 1.8rem;
+        }
+        .blog-meta {
+            color: var(--red);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ---- contact form & info ---- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .form-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 2px solid var(--mint);
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--mint);
+            border-radius: 60px;
+            font-size: 1rem;
+            background: var(--light);
+            transition: var(--transition);
+        }
+        .input-group textarea {
+            border-radius: 30px;
+            resize: vertical;
+            min-height: 120px;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--red);
+            box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.1);
+        }
+        .btn {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 16px -6px var(--red);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn:hover {
+            background: var(--deep);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 24px -8px var(--deep);
+        }
+        .info-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 2px solid var(--mint);
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--mint);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep);
+        }
+
+        /* ---- footer (bold deep) ---- */
+        .footer {
+            background: var(--deep);
+            color: var(--light);
+            padding: 4rem 0 1.5rem;
+            border-top: 6px solid var(--red);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .footer a {
+            color: var(--mint);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .footer a:hover {
+            color: var(--red);
+            transform: translateX(4px);
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .social-links a {
+            background: rgba(168, 218, 220, 0.1);
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--mint);
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--ocean);
+            padding-top: 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            color: var(--mint);
+        }
+        .copy-badge {
+            background: var(--red);
+            color: white;
+            border-radius: 40px;
+            padding: 0.2rem 1.2rem;
+            font-weight: 600;
+        }
+
+        /* ---- careers page section (added) ---- */
+        .careers-list {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--mint);
+        }
+        .job-item:last-child { border-bottom: none; }
+
+        /* ---- responsiveness ---- */
+        @media (max-width: 1100px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .grid-2, .grid-3, .story-block, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                padding: 2rem;
+                border-bottom: 4px solid var(--red);
+                gap: 1rem;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            }
+            .nav-list.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .process-steps { flex-direction: column; }
+            .page-header h2 { font-size: 2.5rem; }
+        }
+        @media (max-width: 500px) {
+            .grid-4 { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+    <div class="bg-grid"></div>
+    <div class="bg-abstract"></div>
+
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">skillers tect</a>
+                <a href="#home" class="logo">skillerstech</a>
                 <nav>
                     <ul class="nav-list" id="navList">
-                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
                         <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#process" class="nav-link">Process</a></li>
+                        <li><a href="#team" class="nav-link">Team</a></li>
+                        <li><a href="#careers" class="nav-link">Careers</a></li>
+                        <li><a href="#insights" class="nav-link">Insights</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                     <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -89,302 +566,198 @@
             </div>
         </div>
     </header>
-    <main class="main">
-        <section id="home" class="hero">
+
+    <main>
+        <!-- HOME / HERO -->
+        <section id="home" class="page-section" style="padding-top: 3rem;">
             <div class="container">
-                <h1>Technology & Logistics Innovation</h1>
-                <p>skillers tech delivers cutting-edge solutions in web development, AI, cloud, IoT, logistics, and business consulting. Where technology meets efficiency.</p>
-                <a href="#contact" class="btn">Get Started <i data-lucide="arrow-right"></i></a>
-            </div>
-        </section>
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="section-title">Our Core Services</h2>
-                <p class="section-subtitle">Integrated technology and logistics solutions designed to accelerate your business growth.</p>
-                <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-                    <div class="card">
-                        <div class="icon"><i data-lucide="code"></i></div>
-                        <h3 class="card-title">Web & App Development</h3>
-                        <p>Modern, scalable applications built with cutting-edge technologies.</p>
-                        <ul class="features">
-                            <li>Responsive Web Design</li>
-                            <li>Mobile App Development</li>
-                            <li>API Integration</li>
-                            <li>Performance Optimization</li>
-                            <li>Business Consulting</li>
-                        </ul>
+                <div class="page-header">
+                    <h2>build · scale · <span>innovate</span></h2>
+                    <p>skillerstech is a full-stack technology startup. We combine AI, cloud, logistics, and compelling copy to turn ambitious ideas into market-leading products.</p>
+                    <div style="margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center;">
+                        <a href="#contact" class="btn">Start a project <i data-lucide="arrow-right"></i></a>
+                        <a href="#services" class="btn" style="background: transparent; color: var(--red); border: 2px solid var(--red); box-shadow: none;">Explore</a>
                     </div>
-                    <div class="card">
-                        <div class="icon"><i data-lucide="cpu"></i></div>
-                        <h3 class="card-title">AI & Machine Learning</h3>
-                        <p>Intelligent solutions that transform data into actionable insights.</p>
-                        <ul class="features">
-                            <li>Predictive Analytics</li>
-                            <li>Computer Vision</li>
-                            <li>Natural Language Processing</li>
-                            <li>AI-Powered Automation</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="icon"><i data-lucide="cloud"></i></div>
-                        <h3 class="card-title">Cloud Solutions</h3>
-                        <p>Scalable, secure cloud infrastructure and migration services.</p>
-                        <ul class="features">
-                            <li>Cloud Migration</li>
-                            <li>Serverless Architecture</li>
-                            <li>DevOps Implementation</li>
-                            <li>Cloud Security</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="icon"><i data-lucide="globe"></i></div>
-                        <h3 class="card-title">IoT Integration</h3>
-                        <p>Connected devices and smart systems for real-time monitoring.</p>
-                        <ul class="features">
-                            <li>IoT Platform Development</li>
-                            <li>Sensor Integration</li>
-                            <li>Real-time Data Processing</li>
-                            <li>Edge Computing</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="icon"><i data-lucide="truck"></i></div>
-                        <h3 class="card-title">Smart Logistics</h3>
-                        <p>AI-powered logistics and supply chain optimization solutions.</p>
-                        <ul class="features">
-                            <li>Route Optimization</li>
-                            <li>Inventory Management</li>
-                            <li>Real-time Tracking</li>
-                            <li>Supply Chain Analytics</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="icon"><i data-lucide="shield"></i></div>
-                        <h3 class="card-title">Cybersecurity</h3>
-                        <p>Comprehensive security solutions for your digital infrastructure.</p>
-                        <ul class="features">
-                            <li>Security Audits</li>
-                            <li>Threat Detection</li>
-                            <li>Data Protection</li>
-                            <li>Compliance Management</li>
-                        </ul>
-                    </div>
-                    <!-- Business Consulting Card Starts Here -->
-                    <div class="card">
-                        <div class="icon"><i data-lucide="briefcase"></i></div>
-                        <h3 class="card-title">Business Consulting</h3>
-                        <p>Strategic guidance to optimize growth, efficiency, and competitive advantage through technology adoption.</p>
-                        <ul class="features">
-                            <li>Digital Transformation</li>
-                            <li>Process Automation</li>
-                            <li>Market Analysis</li>
-                            <li>Innovation Strategy</li>
-                            <li>Change Management</li>
-                        </ul>
-                    </div>
-                    <!-- Business Consulting Card Ends Here -->
+                </div>
+                <!-- stats bar -->
+                <div class="stat-grid" style="max-width: 900px; margin: 3rem auto 0;">
+                    <div class="stat-item"><span class="stat-number">50+</span> <p>projects delivered</p></div>
+                    <div class="stat-item"><span class="stat-number">100%</span> <p>client retention</p></div>
+                    <div class="stat-item"><span class="stat-number">24/7</span> <p>support</p></div>
+                    <div class="stat-item"><span class="stat-number">8</span> <p>core team</p></div>
                 </div>
             </div>
         </section>
-        <section id="contact" class="section section-alt">
+
+        <!-- ABOUT page -->
+        <section id="about" class="page-section" style="background: rgba(168, 218, 220, 0.1);">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to transform your business with innovative technology and logistics solutions?</p>
+                <h2 class="section-title">About us</h2>
+                <div class="story-block">
+                    <div>
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">From a garage to global impact</h3>
+                        <p style="margin-bottom: 1rem;">Founded in 2022, skillerstech started as a two‑person collective obsessed with logistics and AI. Today we're a remote‑first startup with talent across three continents, serving clients from San Francisco to Singapore.</p>
+                        <p>We don't just write code — we write copy that converts, design systems that scale, and strategies that future‑proof. Our name stands for skill + ers (the people) + technology. Every client gets a dedicated team of engineers, creatives, and consultants.</p>
+                        <p><strong style="color: var(--red);">Our core belief:</strong> technology must be human. That's why we embed copywriters from day one — so your product speaks human, not just machine.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="team collaboration" style="width:100%; border-radius:2rem; border:4px solid var(--mint);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES page -->
+        <section id="services" class="page-section">
+            <div class="container">
+                <h2 class="section-title">What we build</h2>
+                <div class="grid-3">
+                    <div class="card"><div class="card-icon"><i data-lucide="code"></i></div><h3>Web & App Dev</h3><p>React, Node, Flutter, Swift — fast, accessible, and scalable.</p><div><span class="feature-tag">PWA</span><span class="feature-tag">e‑commerce</span><span class="feature-tag">dashboard</span></div></div>
+                    <div class="card"><div class="card-icon"><i data-lucide="cpu"></i></div><h3>AI & Machine Learning</h3><p>Predictive models, computer vision, custom LLM fine‑tuning.</p><div><span class="feature-tag">NLP</span><span class="feature-tag">forecasting</span><span class="feature-tag">chatbots</span></div></div>
+                    <div class="card"><div class="card-icon"><i data-lucide="cloud"></i></div><h3>Cloud & DevOps</h3><p>AWS, Azure, GCP — infrastructure as code, CI/CD, serverless.</p><div><span class="feature-tag">Kubernetes</span><span class="feature-tag">Terraform</span></div></div>
+                    <div class="card"><div class="card-icon"><i data-lucide="truck"></i></div><h3>Smart Logistics</h3><p>Real‑time tracking, route optimization, warehouse automation.</p><div><span class="feature-tag">IoT</span><span class="feature-tag">analytics</span></div></div>
+                    <div class="card"><div class="card-icon"><i data-lucide="pen-tool"></i></div><h3>Copywriting & Content</h3><p>Tech‑savvy copy that sounds human. Whitepapers, landing pages, RFP.</p><div><span class="feature-tag">SEO</span><span class="feature-tag">technical</span><span class="feature-tag">UX writing</span></div></div>
+                    <div class="card"><div class="card-icon"><i data-lucide="briefcase"></i></div><h3>Business Consulting</h3><p>Digital transformation, innovation sprints, go‑to‑market strategy.</p><div><span class="feature-tag">agile</span><span class="feature-tag">MVP</span><span class="feature-tag">scale‑up</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS page -->
+        <section id="process" class="page-section" style="background: rgba(69, 123, 157, 0.05);">
+            <div class="container">
+                <h2 class="section-title">How we work</h2>
+                <div class="process-steps">
+                    <div class="step"><span class="step-num">1</span><h4>Discover</h4><p>User research, market audit, copy strategy</p></div>
+                    <div class="step"><span class="step-num">2</span><h4>Prototype</h4><p>Interactive mock + core copy</p></div>
+                    <div class="step"><span class="step-num">3</span><h4>Build & write</h4><p>Agile dev + content creation</p></div>
+                    <div class="step"><span class="step-num">4</span><h4>Launch & optimize</h4><p>SEO, performance, iteration</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM page -->
+        <section id="team" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Core team</h2>
+                <div class="grid-4">
+                    <div class="team-card"><div class="team-avatar"><i data-lucide="user" size="48"></i></div><h4>Aadhavan R.</h4><p>Founder & CTO</p><span class="feature-tag">full‑stack</span></div>
+                    <div class="team-card"><div class="team-avatar"><i data-lucide="user" size="48"></i></div><h4>Maya K.</h4><p>Lead AI engineer</p><span class="feature-tag">ML ops</span></div>
+                    <div class="team-card"><div class="team-avatar"><i data-lucide="user" size="48"></i></div><h4>Jordan Lee</h4><p>Copy director</p><span class="feature-tag">tech writing</span></div>
+                    <div class="team-card"><div class="team-avatar"><i data-lucide="user" size="48"></i></div><h4>Samir Gupta</h4><p>Logistics architect</p><span class="feature-tag">IoT</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAREERS page (new) -->
+        <section id="careers" class="page-section" style="background: rgba(230, 57, 70, 0.03);">
+            <div class="container">
+                <h2 class="section-title">Join the team</h2>
+                <div class="careers-list">
+                    <div class="job-item"><div><h3>Senior AI Engineer</h3><p>Remote · full‑time</p></div><span class="feature-tag" style="background: var(--red); color:white;">Apply</span></div>
+                    <div class="job-item"><div><h3>Technical Copywriter</h3><p>Remote · contract</p></div><span class="feature-tag" style="background: var(--red); color:white;">Apply</span></div>
+                    <div class="job-item"><div><h3>Cloud Architect</h3><p>Hybrid · full‑time</p></div><span class="feature-tag" style="background: var(--red); color:white;">Apply</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSIGHTS / blog page -->
+        <section id="insights" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Latest insights</h2>
+                <div class="grid-3">
+                    <div class="blog-card"><div class="blog-img"><i data-lucide="file-text" size="48"></i></div><div class="blog-content"><span class="blog-meta">AI · 5 min read</span><h4>AI in logistics: 2025 trends</h4><p>How predictive routing cuts costs by 23%.</p></div></div>
+                    <div class="blog-card"><div class="blog-img"><i data-lucide="pen-tool" size="48"></i></div><div class="blog-content"><span class="blog-meta">Copywriting · 4 min</span><h4>Copy that converts for B2B tech</h4><p>3 high‑performing case studies.</p></div></div>
+                    <div class="blog-card"><div class="blog-img"><i data-lucide="cloud" size="48"></i></div><div class="blog-content"><span class="blog-meta">DevOps · 6 min</span><h4>Serverless vs. containers</h4><p>Choosing the right cloud architecture.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT page -->
+        <section id="contact" class="page-section" style="background: rgba(168, 218, 220, 0.1);">
+            <div class="container">
+                <h2 class="section-title">Let's talk</h2>
                 <div class="contact-grid">
-                    <form id="contactForm" class="card">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project needs..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message <i data-lucide="send"></i></button>
-                    </form>
-                    <div style="display:flex;flex-direction:column;gap:2rem">
-                        <div class="card">
-                            <div style="display:flex;align-items:center;gap:1rem">
-                                <div class="icon"><i data-lucide="phone"></i></div>
-                                <div>
-                                    <h3>Phone</h3>
-                                    <p>+91 84899 20988</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div style="display:flex;align-items:center;gap:1rem">
-                                <div class="icon"><i data-lucide="mail"></i></div>
-                                <div>
-                                    <h3>Email</h3>
-                                    <p>aadthiyaa@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div style="display:flex;align-items:center;gap:1rem">
-                                <div class="icon"><i data-lucide="user"></i></div>
-                                <div>
-                                    <h3>Admin Profile</h3>
-                                    <p><a href="https://aadhavanmassdp.github.io/porfolio/" target="_blank" style="color:var(--secondary);text-decoration:underline;">View Portfolio</a></p>
-                                </div>
-                            </div>
+                    <div class="form-card">
+                        <form id="contactForm">
+                            <div class="input-group"><input type="text" placeholder="Your name" required></div>
+                            <div class="input-group"><input type="email" placeholder="Email" required></div>
+                            <div class="input-group"><textarea rows="4" placeholder="Tell us about your project..."></textarea></div>
+                            <button type="submit" class="btn">Send message <i data-lucide="send"></i></button>
+                        </form>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-item"><div class="info-icon"><i data-lucide="phone"></i></div><div><h4>Phone</h4><p>+91 84899 20988</p></div></div>
+                        <div class="info-item"><div class="info-icon"><i data-lucide="mail"></i></div><div><h4>Email</h4><p>aadthiyaa@gmail.com</p></div></div>
+                        <div class="info-item"><div class="info-icon"><i data-lucide="user"></i></div><div><h4>Admin</h4><p><a href="https://aadhavanmassdp.github.io/porfolio/" target="_blank" style="color: var(--red);">View portfolio</a></p></div></div>
+                        <div class="social-links" style="justify-content: flex-start;">
+                            <a href="https://github.com/ADVTECH-dev876" target="_blank"><i data-lucide="github"></i></a>
+                            <a href="https://www.linkedin.com/in/aadhavan-r-3a2b00257" target="_blank"><i data-lucide="linkedin"></i></a>
+                            <a href="https://substack.com/@aadhavtech" target="_blank"><i data-lucide="mail"></i></a>
+                            <a href="https://www.youtube.com/@tech_sys-t5f" target="_blank"><i data-lucide="youtube"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h3>skillerstech</h3>
-                    <p>Innovating at the intersection of technology and logistics. Building the future, one solution at a time.</p>
-                    <div class="social">
-                        <a href="https://github.com/ADVTECH-dev876" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
-                        <a href="https://www.linkedin.com/in/aadhavan-r-3a2b00257" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                        <a href="https://substack.com/@aadhavtech" target="_blank" aria-label="Substack"><i data-lucide="mail"></i></a>
-                        <a href="https://www.youtube.com/@tech_sys-t5f" target="_blank" aria-label="youtube"><i data-lucide="youtube"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3>Services</h3>
-                    <p><a href="#services">Web Development</a></p>
-                    <p><a href="#services">AI Solutions</a></p>
-                    <p><a href="#services">Cloud Services</a></p>
-                    <p><a href="#services">IoT Integration</a></p>
-                    <p><a href="#services">Business Consulting</a></p>
-                </div>
-                <div>
-                    <h3>Company</h3>
-                    <p><a href="#home">About Us</a></p>
-                    <p><a href="#contact">Contact</a></p>
-                    <p><a href="#">Careers</a></p>
-                    <p><a href="#">Blog</a></p>
-                </div>
-                <div>
-                    <h3>Legal</h3>
-                    <p><a href="#">Privacy Policy</a></p>
-                    <p><a href="#">Terms of Service</a></p>
-                    <p><a href="#">Cookie Policy</a></p>
-                </div>
+                <div><h3 style="color: var(--red);">skillerstech</h3><p>Where technology meets compelling copy. We build startups' unseen backbone.</p></div>
+                <div><h4>Navigate</h4><p><a href="#services">Services</a></p><p><a href="#process">Process</a></p><p><a href="#team">Team</a></p><p><a href="#careers">Careers</a></p></div>
+                <div><h4>Resources</h4><p><a href="#insights">Blog</a></p><p><a href="#">Documentation</a></p><p><a href="#">Case studies</a></p></div>
+                <div><h4>Legal</h4><p><a href="#">Privacy</a></p><p><a href="#">Terms</a></p><p><a href="#">Imprint</a></p></div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 skillerstech. All rights reserved.</p>
+                <span class="copy-badge">©</span> <span>2025 skillerstech — crafted with <i data-lucide="heart" style="color: var(--red); width:1rem;"></i> and <i data-lucide="pen-tool"></i> — all rights reserved.</span>
             </div>
         </div>
     </footer>
-    <!-- Chatbot -->
-    <div class="chatbot-container">
-        <div class="chatbot-toggle" id="chatbotToggle">
-            <i data-lucide="message-circle"></i>
-        </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <span>our chatbot</span>
-                <span id="chatbotClose" style="cursor:pointer;font-size:1.2rem">×</span>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot-message">Hello! I'm your skillerstech assistant. How can I help you today?</div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Type your message..." maxlength="200">
-                <button id="chatbotSend">Send</button>
-            </div>
-        </div>
-    </div>
+
     <script>
         lucide.createIcons();
-        // Navigation
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        // mobile menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
         const navList = document.getElementById('navList');
-        mobileMenuBtn.addEventListener('click', () => navList.classList.toggle('active'));
-        document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => navList.classList.remove('active')));
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', e => {
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navList.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            icon.setAttribute('data-lucide', navList.classList.contains('active') ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        // smooth scroll + active link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    // close mobile if open
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                        mobileBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+                        lucide.createIcons();
+                    }
+                    // update active class
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // form alert
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            document.querySelector(anchor.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'});
-        }));
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', e => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            if(formData.get('name') && formData.get('email') && formData.get('message')){
-                alert('Thank you for your message! We\'ll get back to you shortly.');
-                e.target.reset();
-            }
+            alert('✨ Thanks for reaching out. We’ll reply within 24 hours.');
         });
-        // Chatbot
-        const chatbotToggle = document.getElementById('chatbotToggle');
-        const chatbotWindow = document.getElementById('chatbotWindow');
-        const chatbotClose = document.getElementById('chatbotClose');
-        const chatbotMessages = document.getElementById('chatbotMessages');
-        const chatbotInput = document.getElementById('chatbotInput');
-        const chatbotSend = document.getElementById('chatbotSend');
-        chatbotToggle.addEventListener('click', () => {
-            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-        });
-        chatbotClose.addEventListener('click', () => {
-            chatbotWindow.style.display = 'none';
-        });
-        function addMessage(text, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-            messageDiv.textContent = text;
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-        function getBotResponse(userMessage) {
-            const lowerMessage = userMessage.toLowerCase();
-            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-                return "Hello! How can I assist you with our services today?";
-            } else if (lowerMessage.includes('web') || lowerMessage.includes('app') || lowerMessage.includes('development')) {
-                return "We specialize in modern web and mobile app development using cutting-edge technologies. Would you like to know more about our development services?";
-            } else if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) {
-                return "Our AI solutions include predictive analytics, computer vision, and NLP. We help businesses leverage AI for better decision-making and automation.";
-            } else if (lowerMessage.includes('cloud')) {
-                return "We offer comprehensive cloud solutions including migration, serverless architecture, and DevOps implementation across major cloud platforms.";
-            } else if (lowerMessage.includes('iot') || lowerMessage.includes('internet of things')) {
-                return "Our IoT integration services connect devices and systems for real-time monitoring and data processing, enabling smarter operations.";
-            } else if (lowerMessage.includes('logistics') || lowerMessage.includes('supply chain')) {
-                return "We provide AI-powered logistics solutions including route optimization, inventory management, and real-time tracking to streamline your supply chain.";
-            } else if (lowerMessage.includes('consulting') || lowerMessage.includes('business consulting')) {
-                return "Our business consulting helps organizations drive transformation with digital strategy, innovation, and change management. Let us know your goals!";
-            } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('quote')) {
-                return "Pricing varies based on project requirements. Please contact us at [aadthiyaa@gmail.com](mailto:aadthiyaa@gmail.com) for a personalized quote!";
-            } else if (lowerMessage.includes('thank')) {
-                return "You're welcome! Is there anything else I can help you with?";
-            } else if (lowerMessage.includes('github')) {
-                return "You can find our code on GitHub: https://github.com/ADVTECH-dev876";
-            } else if (lowerMessage.includes('linkedin')) {
-                return "Connect with us on LinkedIn: https://www.linkedin.com/in/aadhavan";
-            } else if (lowerMessage.includes('substack')) {
-                return "Follow our tech insights on Substack: https://substack.com/@aadhavtech";
-            } else if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('profile')) {
-                return "You can reach us at aadthiyaa@gmail.com or call +91 84899 20988. You can also view our admin profile at https://aadhavanmassdp.github.io/porfolio/";
-            } else {
-                return "I'm here to help with questions about our web development, AI, cloud, IoT, business consulting, and logistics services. What would you like to know?";
-            }
-        }
-        function sendMessage() {
-            const message = chatbotInput.value.trim();
-            if (message) {
-                addMessage(message, true);
-                chatbotInput.value = '';
-                setTimeout(() => {
-                    const response = getBotResponse(message);
-                    addMessage(response);
-                }, 500);
-            }
-        }
-        chatbotSend.addEventListener('click', sendMessage);
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
+
+        // re-run lucide for any dynamic icons
+        lucide.createIcons();
     </script>
 </body>
 </html>
