@@ -509,6 +509,26 @@
         }
         .job-item:last-child { border-bottom: none; }
 
+        /* ---- form submission status ---- */
+        .form-status {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 60px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        .form-status.success {
+            background: var(--mint);
+            color: var(--deep);
+            display: block;
+        }
+        .form-status.error {
+            background: var(--red);
+            color: white;
+            display: block;
+        }
+
         /* ---- responsiveness ---- */
         @media (max-width: 1100px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -672,23 +692,31 @@
             </div>
         </section>
 
-        <!-- CONTACT page -->
+        <!-- CONTACT page with Formspree integration -->
         <section id="contact" class="page-section" style="background: rgba(168, 218, 220, 0.1);">
             <div class="container">
                 <h2 class="section-title">Let's talk</h2>
                 <div class="contact-grid">
                     <div class="form-card">
-                        <form id="contactForm">
-                            <div class="input-group"><input type="text" placeholder="Your name" required></div>
-                            <div class="input-group"><input type="email" placeholder="Email" required></div>
-                            <div class="input-group"><textarea rows="4" placeholder="Tell us about your project..."></textarea></div>
+                        <form id="contactForm" action="https://formspree.io/f/xzdjrdnl" method="POST">
+                            <div class="input-group">
+                                <input type="text" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="input-group">
+                                <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                            </div>
                             <button type="submit" class="btn">Send message <i data-lucide="send"></i></button>
+                            <div id="formStatus" class="form-status"></div>
                         </form>
                     </div>
                     <div class="info-card">
                         <div class="info-item"><div class="info-icon"><i data-lucide="phone"></i></div><div><h4>Phone</h4><p>+91 84899 20988</p></div></div>
                         <div class="info-item"><div class="info-icon"><i data-lucide="mail"></i></div><div><h4>Email</h4><p>aadthiyaa@gmail.com</p></div></div>
-                        <div class="info-item"><div class="info-icon"><i data-lucide="user"></i></div><div><h4>Admin</h4><p><a href="https://aadhavanmassdp.github.io/porfolio/" target="_blank" style="color: var(--red);">View portfolio</a></p></div></div>
+                        <div class="info-item"><div class="info-icon"><i data-lucide="user"></i></div><div><h4>Admin</h4><p><a href="https://porfolio-mu-topaz.vercel.app/
+" target="_blank" style="color: var(--red);">View portfolio</a></p></div></div>
                         <div class="social-links" style="justify-content: flex-start;">
                             <a href="https://github.com/ADVTECH-dev876" target="_blank"><i data-lucide="github"></i></a>
                             <a href="https://www.linkedin.com/in/aadhavan-r-3a2b00257" target="_blank"><i data-lucide="linkedin"></i></a>
@@ -729,35 +757,78 @@
             lucide.createIcons();
         });
 
-        // smooth scroll + active link
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // active nav link on scroll + close mobile after click
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActiveLink() {
+            let scrollY = window.scrollY + 150; // offset for sticky header
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        window.addEventListener('scroll', setActiveLink);
+
+        // smooth scroll & close mobile on nav click
+        navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    // close mobile if open
-                    if (navList.classList.contains('active')) {
-                        navList.classList.remove('active');
-                        mobileBtn.querySelector('i').setAttribute('data-lucide', 'menu');
-                        lucide.createIcons();
-                    }
-                    // update active class
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+                // close mobile if open
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                    const icon = mobileBtn.querySelector('i');
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
                 }
             });
         });
 
-        // form alert
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('✨ Thanks for reaching out. We’ll reply within 24 hours.');
-        });
-
-        // re-run lucide for any dynamic icons
-        lucide.createIcons();
+        // formspree (client-side status)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const statusDiv = document.getElementById('formStatus');
+                statusDiv.className = 'form-status';
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        statusDiv.textContent = 'thanks! we’ll be in touch soon.';
+                        statusDiv.classList.add('success');
+                        contactForm.reset();
+                    } else {
+                        statusDiv.textContent = 'something went wrong — please try again.';
+                        statusDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    statusDiv.textContent = 'network error — check connection.';
+                    statusDiv.classList.add('error');
+                }
+            });
+        }
     </script>
 </body>
 </html>
